@@ -13,6 +13,9 @@ Just remove the carrot (^) and add a underscore (_) at the end.
 MGV.config.gamemodePrefixes = {
     ["base"] = "nil",
     ["sandbox"] = "nil", 
+    ["darkrp"] = "nil",
+    ["kf"] = "nil",
+    ["mf_survival"] = "nil",
     ["terrortown"] = "ttt_",
     ["prop_hunt"] = "ph_",
 }    
@@ -28,4 +31,13 @@ if SERVER then
     concommand.Add("gamemodeslist", function(NULL) 
         PrintTable( engine.GetGamemodes() )
     end)
+end
+
+if CLIENT then
+    surface.CreateFont( "MGV_Text", {
+        font = "Marlett", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+        extended = false,
+        size = ScreenScale(6),
+        weight = 500,    
+    } )
 end
